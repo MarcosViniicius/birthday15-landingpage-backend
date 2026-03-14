@@ -330,77 +330,56 @@
     </script>
 
     <script>
+      // ==========================================================
+      // [BACKEND - REATIVAR] Funções administrativas
+      // Para reativar: descomente o corpo de cada função abaixo e
+      // reative as rotas /admin/* no index.py
+      // ==========================================================
+
       function excluirSelecionados() {
-        if (
-          !confirm(
-            "Tem certeza que deseja excluir os convidados selecionados? Esta ação não pode ser desfeita."
-          )
-        )
-          return;
-        const ids = Array.from(
-          document.querySelectorAll(".admin-checkbox input:checked")
-        ).map((cb) => cb.value);
-        if (ids.length === 0) {
-          alert("Selecione pelo menos um convidado para excluir.");
-          return;
-        }
-        fetch("/admin/excluir_participantes", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ids }),
-        })
-          .then((resp) => resp.json())
-          .then((data) => {
-            if (data.sucesso) {
-              alert("Convidado(s) excluído(s) com sucesso!");
-              location.reload();
-            } else {
-              alert("Erro ao excluir convidados.");
-            }
-          })
-          .catch(() => {
-            alert("Erro ao comunicar com o servidor.");
-          });
+        // [BACKEND - REATIVAR] botão de exclusão de participantes
+        // if (!confirm("Tem certeza que deseja excluir os convidados selecionados? Esta ação não pode ser desfeita.")) return;
+        // const ids = Array.from(document.querySelectorAll(".admin-checkbox input:checked")).map((cb) => cb.value);
+        // if (ids.length === 0) { alert("Selecione pelo menos um convidado para excluir."); return; }
+        // fetch("/admin/excluir_participantes", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({ ids }),
+        // })
+        //   .then((resp) => resp.json())
+        //   .then((data) => {
+        //     if (data.sucesso) { alert("Convidado(s) excluído(s) com sucesso!"); location.reload(); }
+        //     else { alert("Erro ao excluir convidados."); }
+        //   })
+        //   .catch(() => { alert("Erro ao comunicar com o servidor."); });
+        alert("⚠️ Funcionalidade desativada no modo portfólio.\n\nPara reativar, conecte o banco de dados e descomente as rotas admin em index.py.");
       }
 
       function reestabelecerIndice() {
-        if (!confirm("Tem certeza que deseja reestabelecer o índice de ID?"))
-          return;
-        fetch("/admin/reestabelecer_indice", { method: "POST" })
-          .then((resp) => resp.json())
-          .then((data) => {
-            if (data.sucesso) {
-              alert("Índice de ID reestabelecido!");
-              location.reload();
-            } else {
-              alert("Erro ao reestabelecer índice.");
-            }
-          })
-          .catch(() => {
-            alert("Erro ao comunicar com o servidor.");
-          });
+        // [BACKEND - REATIVAR] reestabelecer índice de ID da tabela participante
+        // if (!confirm("Tem certeza que deseja reestabelecer o índice de ID?")) return;
+        // fetch("/admin/reestabelecer_indice", { method: "POST" })
+        //   .then((resp) => resp.json())
+        //   .then((data) => {
+        //     if (data.sucesso) { alert("Índice de ID reestabelecido!"); location.reload(); }
+        //     else { alert("Erro ao reestabelecer índice."); }
+        //   })
+        //   .catch(() => { alert("Erro ao comunicar com o servidor."); });
+        alert("⚠️ Funcionalidade desativada no modo portfólio.\n\nPara reativar, conecte o banco de dados e descomente as rotas admin em index.py.");
       }
 
       function atualizarReservas() {
-        if (
-          !confirm("Tem certeza que deseja atualizar as reservas de presentes?")
-        )
-          return;
-        fetch("/admin/atualizar_reservas", { method: "POST" })
-          .then((resp) => resp.json())
-          .then((data) => {
-            if (data.sucesso) {
-              alert("Reservas de presentes atualizadas!");
-              location.reload();
-            } else {
-              alert("Erro ao atualizar reservas.");
-            }
-          })
-          .catch(() => {
-            alert("Erro ao comunicar com o servidor.");
-          });
+        // [BACKEND - REATIVAR] sincronizar reservas de presentes com o banco
+        // if (!confirm("Tem certeza que deseja atualizar as reservas de presentes?")) return;
+        // fetch("/admin/atualizar_reservas", { method: "POST" })
+        //   .then((resp) => resp.json())
+        //   .then((data) => {
+        //     if (data.sucesso) { alert("Reservas de presentes atualizadas!"); location.reload(); }
+        //     else { alert("Erro ao atualizar reservas."); }
+        //   })
+        //   .catch(() => { alert("Erro ao comunicar com o servidor."); });
+        alert("⚠️ Funcionalidade desativada no modo portfólio.\n\nPara reativar, conecte o banco de dados e descomente as rotas admin em index.py.");
       }
     </script>
   </body>
 </html>
-```

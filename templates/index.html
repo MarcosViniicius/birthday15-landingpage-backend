@@ -302,7 +302,7 @@
           <div class="alert alert-warning" role="alert">
             <strong>Atenção!</strong> Preencha todos os campos com calma. Se
             tiver dúvidas, peça ajuda para alguém de confiança ou entre em contato com
-            o(a) organizador(a) pelo WhatsApp <strong>(84) 98795-5400</strong>.
+            o(a) organizador(a) pelo WhatsApp.
           </div>
           <!-- Adicione este bloco logo acima do formulário de confirmação, dentro da seção de confirmação -->
           <div class="mb-4 text-center">
@@ -376,7 +376,7 @@
                 <li>
                   <strong>Importante:</strong> Se tiver dúvidas, peça ajuda para
                   alguém de confiança ou fale com o(a) organizador(a) pelo WhatsApp
-                  <b>(84) 98795-5400</b>.
+                  fale com o(a) organizador(a) pelo WhatsApp.
                 </li>
               </ol>
               <div class="alert alert-info mt-3 mb-0">
@@ -390,8 +390,8 @@
           <div class="col-lg-7 mb-4">
             <div class="alert alert-info" role="alert">
               Ao confirmar presença, escolha entre levar um presente ou
-              contribuir via Pix. Qualquer dúvida, fale comigo pelo WhatsApp:
-              <strong>(84) 98795-5400</strong>. Se preferir pagar em dinheiro,
+              contribuir via Pix. Qualquer dúvida, fale com o(a) organizador(a)
+              pelo WhatsApp. Se preferir pagar em dinheiro,
               selecione Pix e siga as instruções após confirmar.
             </div>
             <div class="col-lg-7 animate__animated animate__fadeInLeft"></div>
@@ -428,7 +428,7 @@
                     title="Por favor, insira um endereço de e-mail válido (ex.: exemplo@email.com)."
                     autocomplete="email"
                     style="font-size: 1.1rem"
-                    value="{{ request.form.email or '' }}"
+                    value=""
                   />
                   <small class="form-text text-muted">
                     Informe um e-mail válido para receber os detalhes da
@@ -437,10 +437,7 @@
                     caixa de entrada e também a pasta de spam/lixo
                     eletrônico.<br />
                     O e-mail será enviado por
-                    <strong
-                      >{{ mail_username or 'confirmacaoanabeariz15@gmail.com'
-                      }}</strong
-                    >.
+                    <strong>{{ mail_remetente }}</strong>.
                   </small>
                 </div>
 
@@ -578,7 +575,7 @@
                     <small class="form-text text-muted mt-1 d-block">
                     <strong>Dica:</strong> Escolha um presente da lista acima. Após selecionar, não será possível trocar.<br />
                     <strong>Como funciona?</strong> O presente será reservado para você e ficará indisponível para outros.<br />
-                    <strong>Importante:</strong> A compra é por sua conta. Em caso de dúvidas, fale com o(a) organizador(a) pelo WhatsApp <strong>(84) 98795-5400</strong>.
+                    <strong>Importante:</strong> A compra é por sua conta. Em caso de dúvidas, fale com o(a) organizador(a) pelo WhatsApp.
                     </small>
 
                   <!-- Imagem do presente -->
@@ -1104,4 +1101,3 @@
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   </body>
 </html>
-``` 
